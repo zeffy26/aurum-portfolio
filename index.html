@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURUM — Luxury Redefined</title>
+  <meta name="description" content="AURUM — timeless luxury, thoughtfully crafted. Discover fine timepieces, jewellery, fragrance, leather goods and refined essentials.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Tenor+Sans&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<!-- ═══════ CURSOR ═══════ -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- ═══════ PRELOADER ═══════ -->
+<div id="preloader">
+  <div class="pl-logo">AURUM</div>
+  <div class="pl-tagline">Luxury · Craftsmanship · Elegance</div>
+  <div class="pl-bar"></div>
+  <div class="pl-counter" id="pl-counter">0%</div>
+</div>
+
+<!-- ═══════ NAVIGATION ═══════ -->
+<nav id="nav">
+  <a href="#" class="nav-logo">AURUM</a>
+  <ul class="nav-links">
+    <li><a href="#products">Collection</a></li>
+    <li><a href="#story">Heritage</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#newsletter">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+  <button class="nav-icon" id="nav-search" title="Search" aria-label="Search">
+  <svg class="search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="10.8" cy="10.8" r="5.8"></circle>
+    <path d="M15.2 15.2L20 20"></path>
+  </svg>
+</button>
+
+  <button class="nav-icon" id="nav-account" title="Account" aria-label="Account">
+    <svg
+      class="account-icon"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="12" cy="8" r="3.5"></circle>
+      <path d="M4.5 21C5.3 16.8 8 14.5 12 14.5C16 14.5 18.7 16.8 19.5 21"></path>
+    </svg>
+  </button>
+
+  <button class="nav-cart" id="nav-cart">Cart (0)</button>
+
+  <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">
+    <span></span>
+    <span></span>
+  </button>
+</div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu-head">
+  <a href="#hero" class="mobile-menu-logo">AURUM</a>
+
+  <button id="mobile-menu-close" aria-label="Close menu">×</button>
+</div>
+
+  <nav class="mobile-menu-links">
+    <a href="#products">Collection</a>
+    <a href="#story">Heritage</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#newsletter">Contact</a>
+  </nav>
+
+  <div class="mobile-menu-footer">
+    AURUM — Luxury Redefined
+  </div>
+</div>
+
+<!-- ═══════ HERO ═══════ -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-grain"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow" id="heyebrow">New Collection — 2025</div>
+
+    <h1 class="hero-title">
+      <span class="title-line"><span id="hl1">The Art of</span></span>
+      <span class="title-line"><span id="hl2"><em>Refinement</em></span></span>
+      <span class="title-line"><span id="hl3">Redefined.</span></span>
+    </h1>
+
+    <p class="hero-sub" id="hsub">
+      Curated luxury for those who appreciate the extraordinary.
+      Where masterful craftsmanship meets timeless elegance.
+    </p>
+
+    <div class="hero-cta" id="hcta">
+      <a href="#products" class="btn-primary">Explore Collection</a>
+      <a href="#story" class="btn-ghost">Our Heritage</a>
+    </div>
+  </div>
+
+  <div class="hero-visual" id="hvisual">
+    <div class="hv-main"><div class="hv-glyph">◈</div></div>
+    <div class="hv-row">
+      <div class="hv-sm"></div>
+      <div class="hv-sm"></div>
+    </div>
+    <div class="hv-tag" onclick="openProductDetail(document.querySelector('.product-card'))">
+      <div class="hv-tag-label">Featured Piece</div>
+      <div class="hv-tag-name">Noir Classique</div>
+      <div class="hv-tag-price">From $1,495</div>
+    </div>
+  </div>
+
+  <div class="hero-scroll" id="hscroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ═══════ MARQUEE ═══════ -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <!-- Doubled for seamless loop -->
+    <div class="marquee-item">Handcrafted Excellence<span class="marquee-dot"></span></div>
+    <div class="marquee-item">Exclusive Designs<span class="marquee-dot"></span></div>
+    <div class="marquee-item">Premium Materials<span class="marquee-dot"></span></div>
+    <div class="marquee-item">Timeless Luxury<span class="marquee-dot"></span></div>
+    <div class="marquee-item">Bespoke Craftsmanship<span class="marquee-dot"></span></div>
+    <div class="marquee-item">Est. 1985<span class="marquee-dot"></span></div>
+    <div class="marquee-item">Free Worldwide Shipping<span class="marquee-dot"></span></div>
+    <div class="marquee-item">Handcrafted Excellence<span class="marquee-dot"></span></div>
+    <div class="marquee-item">Exclusive Designs<span class="marquee-dot"></span></div>
+    <div class="marquee-item">Premium Materials<span class="marquee-dot"></span></div>
+    <div class="marquee-item">Timeless Luxury<span class="marquee-dot"></span></div>
+    <div class="marquee-item">Bespoke Craftsmanship<span class="marquee-dot"></span></div>
+    <div class="marquee-item">Est. 1985<span class="marquee-dot"></span></div>
+    <div class="marquee-item">Free Worldwide Shipping<span class="marquee-dot"></span></div>
+  </div>
+</div>
+
+<!-- ═══════ PRODUCTS ═══════ -->
+<section id="products">
+  <div class="products-header">
+    <div>
+      <div class="s-eye reveal">Our Collection</div>
+      <h2 class="s-title reveal d1">Curated for the <em>Discerning Few</em></h2>
+    </div>
+    <a href="#products" class="btn-ghost reveal" style="align-self:flex-end">
+  Explore Collection
+</a>
+  </div>
+
+  <div class="product-grid">
+
+    <!-- Card 1 — Large -->
+    <div class="product-card reveal">
+      <div class="p-img">
+        <div class="p-img-inner"><span class="p-glyph">◈</span></div>
+        <div class="p-badge">New</div>
+        <div class="p-overlay">
+  <button class="p-overlay-btn" onclick="openProductDetail(this.closest('.product-card'))">
+    View Details
+  </button>
+</div>
+      </div>
+      <div class="p-info">
+        <div class="p-cat">Timepieces</div>
+        <div class="p-name">Noir Classique</div>
+        <div class="p-foot">
+          <span class="p-price">$1,495</span>
+          <button class="p-wish" onclick="toggleWish(this)">♡</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="product-card reveal d1">
+      <div class="p-img">
+        <div class="p-img-inner"><span class="p-glyph">◇</span></div>
+        <div class="p-overlay">
+  <button class="p-overlay-btn" onclick="openProductDetail(this.closest('.product-card'))">
+    View Details
+  </button>
+</div>
+      </div>
+      <div class="p-info">
+        <div class="p-cat">Jewellery</div>
+        <div class="p-name">Celestial Pendant</div>
+        <div class="p-foot">
+          <span class="p-price">$575</span>
+          <button class="p-wish" onclick="toggleWish(this)">♡</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="product-card reveal d2">
+      <div class="p-img">
+        <div class="p-img-inner"><span class="p-glyph">◉</span></div>
+        <div class="p-badge">Limited</div>
+        <div class="p-overlay">
+  <button class="p-overlay-btn" onclick="openProductDetail(this.closest('.product-card'))">
+    View Details
+  </button>
+</div>
+      </div>
+      <div class="p-info">
+        <div class="p-cat">Fragrance</div>
+        <div class="p-name">Oud Royale Parfume</div>
+        <div class="p-foot">
+          <span class="p-price">$275</span>
+          <button class="p-wish" onclick="toggleWish(this)">♡</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="product-card reveal d1">
+      <div class="p-img">
+        <div class="p-img-inner"><span class="p-glyph">▣</span></div>
+        <div class="p-overlay">
+  <button class="p-overlay-btn" onclick="openProductDetail(this.closest('.product-card'))">
+    View Details
+  </button>
+</div>
+      </div>
+      <div class="p-info">
+        <div class="p-cat">Leather Goods</div>
+        <div class="p-name">Artisan Folio</div>
+        <div class="p-foot">
+          <span class="p-price">$225</span>
+          <button class="p-wish" onclick="toggleWish(this)">♡</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="product-card reveal d2">
+      <div class="p-img">
+        <div class="p-img-inner"><span class="p-glyph">◆</span></div>
+        <div class="p-badge">Sale</div>
+        <div class="p-overlay">
+  <button class="p-overlay-btn" onclick="openProductDetail(this.closest('.product-card'))">
+    View Details
+  </button>
+</div>
+      </div>
+      <div class="p-info">
+  <div class="p-cat">Accessories</div>
+
+  <div class="p-name">Heritage Silk Scarf</div>
+
+  <div class="p-foot">
+    <div class="sale-price">
+      <span class="price-old">$220</span>
+      <span class="p-price">$165</span>
+    </div>
+
+    <button class="p-wish" onclick="toggleWish(this)">♡</button>
+  </div>
+</div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="product-card reveal d3">
+      <div class="p-img">
+        <div class="p-img-inner"><span class="p-glyph">◎</span></div>
+        <div class="p-overlay">
+  <button class="p-overlay-btn" onclick="openProductDetail(this.closest('.product-card'))">
+    View Details
+  </button>
+</div>
+      </div>
+      <div class="p-info">
+        <div class="p-cat">Home Luxury</div>
+        <div class="p-name">Marble Ritual Candle</div>
+        <div class="p-foot">
+          <span class="p-price">$110</span>
+          <button class="p-wish" onclick="toggleWish(this)">♡</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /product-grid -->
+</section>
+
+<!-- ═══════ FEATURES STRIP ═══════ -->
+<div class="features-strip">
+  <div class="feature-item reveal">
+    <span class="feature-icon">✦</span>
+    <div class="feature-title">Free Shipping</div>
+    <div class="feature-desc">Complimentary worldwide delivery on all orders above $150</div>
+  </div>
+  <div class="feature-item reveal d1">
+    <span class="feature-icon">◈</span>
+    <div class="feature-title">Authenticity Guaranteed</div>
+    <div class="feature-desc">Each piece arrives with a certificate of provenance and craftsmanship</div>
+  </div>
+  <div class="feature-item reveal d2">
+    <span class="feature-icon">◇</span>
+    <div class="feature-title">Luxury Packaging</div>
+    <div class="feature-desc">Hand-wrapped in our signature black lacquer box with golden ribbon</div>
+  </div>
+  <div class="feature-item reveal d3">
+    <span class="feature-icon">⊕</span>
+    <div class="feature-title">White Glove Returns</div>
+    <div class="feature-desc">30-day hassle-free returns with complimentary collection service</div>
+  </div>
+</div>
+
+<!-- ═══════ STORY ═══════ -->
+<section id="story">
+  <div class="story-visual reveal">
+    <div class="sv-main"></div>
+    <div class="sv-acc"></div>
+    <div class="sv-badge">Est. 1985 · New York, USA</div>
+  </div>
+  <div>
+    <div class="s-eye reveal">Our Heritage</div>
+    <h2 class="s-title reveal d1">Crafted with<br><em>Intention</em></h2>
+    <div class="gold-rule reveal d2"></div>
+    <p class="story-text reveal d2">
+      For four decades, AURUM has stood at the intersection of art and function.
+      Each piece in our collection is born from a belief that luxury is not excess
+      — it is the refinement of everything superfluous until only the essential remains.
+    </p>
+    <br>
+    <p class="story-text reveal d3">
+      Our artisans source materials from the finest corners of the world, transforming
+      them into objects that carry meaning, memory, and mastery. Every stitch, every
+      setting, every grain of wood is chosen with singular purpose.
+    </p>
+    <div class="story-sig reveal d4">— Zeffy, Founder</div>
+    <div class="reveal d4" style="margin-top:2rem">
+      <a href="#" class="btn-ghost" id="read-story">Read Our Story</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ STATS ═══════ -->
+<section id="stats">
+  <div class="stats-grid">
+    <div class="stat-item reveal">
+      <div class="stat-num" data-target="40" data-suffix="+">0</div>
+      <div class="stat-lbl">Years of Excellence</div>
+    </div>
+    <div class="stat-item reveal d1">
+      <div class="stat-num" data-target="12" data-suffix="K+">0</div>
+      <div class="stat-lbl">Happy Clients</div>
+    </div>
+    <div class="stat-item reveal d2">
+      <div class="stat-num" data-target="280" data-suffix="+">0</div>
+      <div class="stat-lbl">Unique Creations</div>
+    </div>
+    <div class="stat-item reveal d3">
+      <div class="stat-num" data-target="18" data-suffix="">0</div>
+      <div class="stat-lbl">Countries Served</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ TESTIMONIALS ═══════ -->
+<section id="testimonials">
+  <div class="test-header">
+    <div>
+      <div class="s-eye reveal">Client Stories</div>
+      <h2 class="s-title reveal d1">Words of <em>Admiration</em></h2>
+    </div>
+    <div class="test-nav">
+      <button class="test-nav-btn" id="tprev">←</button>
+      <button class="test-nav-btn" id="tnext">→</button>
+    </div>
+  </div>
+
+  <div class="test-viewport">
+    <div class="test-track" id="ttrack">
+
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">
+          "The Noir Classique is not merely a watch — it is a conversation. Every person
+          who sees it asks where it came from. AURUM has become my most trusted companion
+          in the art of dressing with intention."
+        </p>
+        <div class="test-author">
+          <div class="test-avatar">RK</div>
+          <div>
+            <div class="test-name">Rahul Khanna</div>
+            <div class="test-role">CEO, Apex Ventures · Mumbai</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">
+          "I gifted my mother the Celestial Pendant for her anniversary and she was moved
+          to tears. There is something in the weight and finish of AURUM pieces that
+          speaks before you even open the box."
+        </p>
+        <div class="test-author">
+          <div class="test-avatar">PS</div>
+          <div>
+            <div class="test-name">Priya Sethi</div>
+            <div class="test-role">Fashion Curator · New Delhi</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">
+          "In a world of fast fashion and disposable luxury, AURUM stands resolutely apart.
+          The Oud Royale has been my signature for three years. I receive compliments
+          without fail, in boardrooms and ballrooms alike."
+        </p>
+        <div class="test-author">
+          <div class="test-avatar">AM</div>
+          <div>
+            <div class="test-name">Aryan Mehta</div>
+            <div class="test-role">Principal Architect · Bangalore</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">
+          "The packaging alone is an experience unto itself. When the black lacquered box
+          arrived with its golden ribbon, I knew I was in the presence of something rare.
+          AURUM understands that luxury begins well before the product."
+        </p>
+        <div class="test-author">
+          <div class="test-avatar">NC</div>
+          <div>
+            <div class="test-name">Nisha Chopra</div>
+            <div class="test-role">Interior Designer · Pune</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="test-dots" id="tdots">
+    <div class="test-dot active" onclick="goToSlide(0)"></div>
+    <div class="test-dot" onclick="goToSlide(1)"></div>
+    <div class="test-dot" onclick="goToSlide(2)"></div>
+  </div>
+</section>
+
+<!-- ═══════ NEWSLETTER ═══════ -->
+<section id="newsletter">
+  <div class="newsletter-inner">
+    <div class="s-eye reveal" style="justify-content:center">Inner Circle</div>
+    <h2 class="s-title reveal d1">Be First to <em>Discover</em></h2>
+    <div class="gold-rule reveal d2" style="margin:1.5rem auto"></div>
+    <p class="reveal d2">
+      Join our exclusive inner circle. Receive private previews, early access to new
+      collections, and stories from our atelier — delivered with care.
+    </p>
+    <div class="nl-form reveal d3">
+      <input type="email" class="nl-input" id="nl-email" placeholder="Your email address…">
+      <button class="nl-submit" onclick="subscribe()">Subscribe</button>
+    </div>
+    <p class="nl-note reveal d4">No spam. Unsubscribe anytime. Your privacy is sacred to us.</p>
+  </div>
+</section>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer>
+  <div class="footer-grid">
+
+    <div>
+      <a href="#hero" class="footer-logo">AURUM</a>
+
+      <p class="footer-about">
+        Luxury redefined for a new generation of discerning individuals.
+        Crafted with intention and reverence since 1985.
+      </p>
+
+      <div class="footer-socials">
+        <a href="javascript:void(0)" class="social-btn" title="Instagram">ig</a>
+        <a href="javascript:void(0)" class="social-btn" title="LinkedIn">in</a>
+        <a href="javascript:void(0)" class="social-btn" title="Pinterest">pt</a>
+        <a href="javascript:void(0)" class="social-btn" title="YouTube">yt</a>
+      </div>
+    </div>
+
+
+    <div class="footer-col">
+      <h4>Collection</h4>
+      <ul>
+        <li><a href="#products">Timepieces</a></li>
+        <li><a href="#products">Jewellery</a></li>
+        <li><a href="#products">Fragrances</a></li>
+        <li><a href="#products">Leather Goods</a></li>
+        <li><a href="#products">Home Luxury</a></li>
+      </ul>
+    </div>
+
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#story">Our Heritage</a></li>
+        <li><a href="#story">Our Artisans</a></li>
+        <li><a href="#story">Sustainability</a></li>
+        <li><a href="#testimonials">Press & Media</a></li>
+        <li><a href="#newsletter">Careers</a></li>
+      </ul>
+    </div>
+
+
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#newsletter">Contact Us</a></li>
+        <li><a href="#newsletter">Shipping Info</a></li>
+        <li><a href="#newsletter">Returns</a></li>
+        <li><a href="#story">Authenticity</a></li>
+        <li><a href="#newsletter">FAQ</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="footer-bottom">
+    <p>© 2025 AURUM Luxury. All rights reserved. Crafted with ✦ in USA.</p>
+
+    <div class="footer-legal">
+      <a href="#newsletter">Privacy Policy</a>
+      <a href="#newsletter">Terms of Service</a>
+      <a href="#newsletter">Cookie Policy</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════ SEARCH OVERLAY ═══════ -->
+<div id="search-overlay">
+
+  <div class="search-box">
+
+    <div class="search-header">
+      <div>
+        <div class="search-eyebrow">The Collection</div>
+        <h2>What are you looking for?</h2>
+      </div>
+
+      <button id="search-close" aria-label="Close search">×</button>
+    </div>
+
+    <div class="search-input-wrap">
+      <span>⌕</span>
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Search our collection..."
+        autocomplete="off"
+      >
+    </div>
+
+    <div id="search-results" class="search-results">
+      <p class="search-hint">Begin typing to explore the collection.</p>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ═══════ CART DRAWER ═══════ -->
+<div id="cart-overlay"></div>
+
+<aside id="cart-drawer">
+
+  <div class="cart-header">
+    <div>
+      <div class="cart-eyebrow">Your Selection</div>
+      <h2>Your Cart</h2>
+    </div>
+
+    <button id="cart-close" aria-label="Close cart">×</button>
+  </div>
+
+  <div id="cart-items" class="cart-items">
+    <!-- Products will appear here through JavaScript -->
+  </div>
+
+  <div class="cart-empty" id="cart-empty">
+    <div class="cart-empty-icon">◇</div>
+    <p>Your selection is currently empty.</p>
+    <button id="cart-continue">Continue Shopping</button>
+  </div>
+
+  <div class="cart-footer">
+
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <strong id="cart-subtotal">$0</strong>
+    </div>
+
+    <button id="cart-checkout" class="cart-checkout">
+      Proceed to Checkout
+    </button>
+
+    <p class="cart-note">
+      Taxes and shipping calculated at checkout.
+    </p>
+
+  </div>
+
+</aside>
+
+<!-- ═══════ FLOATING ACTIONS ═══════ -->
+<button id="floating-cart">
+  🛒
+  <span id="cart-badge">0</span>
+</button>
+<button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- ═══════ CHECKOUT ═══════ -->
+<div id="checkout-overlay">
+
+  <div class="checkout-panel">
+
+    <button id="checkout-close" class="checkout-close">×</button>
+
+    <div class="checkout-header">
+      <div class="checkout-eyebrow">AURUM · CHECKOUT</div>
+      <h2>Complete Your <em>Order</em></h2>
+      <p>Enter your details to continue with your purchase.</p>
+    </div>
+
+    <div class="checkout-layout">
+
+      <!-- Customer Details -->
+<div class="checkout-form">
+
+  <div class="checkout-section-title">
+    <span>01</span>
+    Your Details
+  </div>
+
+  <div class="checkout-row">
+
+    <div class="checkout-field">
+      <label for="checkout-name">Full Name</label>
+      <input
+        type="text"
+        id="checkout-name"
+        placeholder="Your full name"
+      >
+      <small class="checkout-error" id="name-error"></small>
+    </div>
+
+    <div class="checkout-field">
+      <label for="checkout-email">Email Address</label>
+      <input
+        type="email"
+        id="checkout-email"
+        placeholder="you@example.com"
+      >
+      <small class="checkout-error" id="email-error"></small>
+    </div>
+
+  </div>
+
+
+  <div class="checkout-section-title">
+    <span>02</span>
+    Delivery Address
+  </div>
+
+  <div class="checkout-field">
+    <label for="checkout-address">Address</label>
+    <input
+      type="text"
+      id="checkout-address"
+      placeholder="Street address"
+    >
+    <small class="checkout-error" id="address-error"></small>
+  </div>
+
+
+  <div class="checkout-row">
+
+    <div class="checkout-field">
+      <label for="checkout-city">City</label>
+      <input
+        type="text"
+        id="checkout-city"
+        placeholder="City"
+      >
+      <small class="checkout-error" id="city-error"></small>
+    </div>
+
+    <div class="checkout-field">
+      <label for="checkout-pincode">PIN Code</label>
+      <input
+        type="text"
+        id="checkout-pincode"
+        placeholder="PIN code"
+      >
+      <small class="checkout-error" id="pincode-error"></small>
+    </div>
+
+  </div>
+
+
+  <button id="place-order" class="checkout-submit">
+    Place Order
+    <span>→</span>
+  </button>
+
+</div>
+
+
+      <!-- Order Summary -->
+      <div class="checkout-summary">
+
+        <div class="checkout-section-title">
+          <span>03</span>
+          Order Summary
+        </div>
+
+        <div id="checkout-items"></div>
+
+        <div class="checkout-total">
+          <span>Total</span>
+          <strong id="checkout-total">$0</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div id="confirmation-overlay">
+  <div class="confirmation-panel">
+
+    <button id="confirmation-close" class="checkout-close">×</button>
+
+    <div class="confirmation-icon">✓</div>
+
+    <div class="confirmation-eyebrow">
+      ORDER CONFIRMED
+    </div>
+
+    <h2>Thank you for your order.</h2>
+
+    <p class="confirmation-message">
+      Your order has been received and is being prepared with care.
+    </p>
+
+    <div class="confirmation-order">
+      <span>ORDER NUMBER</span>
+      <strong id="confirmation-order-id">AUR-000000</strong>
+    </div>
+
+    <div class="confirmation-summary">
+      <div class="checkout-section-title">
+        <span>01</span>Order Summary
+      </div>
+
+      <div id="confirmation-items"></div>
+
+      <div class="confirmation-total">
+        <span>Total</span>
+        <strong id="confirmation-total">$0</strong>
+      </div>
+    </div>
+
+    <button id="continue-shopping" class="checkout-submit">
+      Continue Shopping <span>→</span>
+    </button>
+
+  </div>
+</div>
+
+<!-- Account Overlay -->
+
+<div id="account-overlay">
+
+  <div class="account-panel">
+
+    <div id="account-success" class="account-success">
+
+  <div class="account-success-icon">✓</div>
+
+  <div class="account-success-eyebrow">
+  WELCOME TO THE AURUM CIRCLE
+</div>
+
+  <h3>Your account is ready.</h3>
+
+  <p>
+    Your AURUM journey begins here. You can now save
+    pieces and keep track of your orders.
+  </p>
+
+  <button
+    type="button"
+    id="account-success-close"
+    class="account-submit"
+  >
+    Continue <span>→</span>
+  </button>
+
+</div>
+
+    <button id="account-close" class="account-close">×</button>
+
+    <div class="account-eyebrow" id="account-eyebrow">
+  THE AURUM CIRCLE
+</div>
+
+    <h2 id="account-heading">Welcome to AURUM.</h2>
+
+    <p class="account-intro">
+      Sign in to access your account, orders and saved pieces.
+    </p>
+
+    <div class="account-tabs">
+      <button class="account-tab active" data-mode="login">
+        Sign In
+      </button>
+
+      <button class="account-tab" data-mode="signup">
+        Create Account
+      </button>
+    </div>
+
+    <!-- Login -->
+
+    <form id="login-form" class="account-form">
+
+      <div class="account-field">
+
+        <label for="login-email">
+          Email Address
+        </label>
+
+        <input
+          type="email"
+          id="login-email"
+          placeholder="you@example.com"
+        >
+
+        <small id="login-email-error"></small>
+
+      </div>
+
+
+      <div class="account-field">
+
+        <label for="login-password">
+          Password
+        </label>
+
+        <div class="password-wrap">
+  <input
+    type="password"
+    id="login-password"
+    placeholder="Your password"
+  >
+
+  <button
+    type="button"
+    class="password-toggle"
+    data-target="login-password"
+    aria-label="Show password"
+  >
+    👁
+  </button>
+</div>
+
+        <small id="login-password-error"></small>
+
+      </div>
+
+
+      <button type="submit" class="account-submit">
+        Sign In <span>→</span>
+      </button>
+
+    </form>
+
+
+    <!-- Signup -->
+
+    <form
+      id="signup-form"
+      class="account-form"
+      style="display:none;"
+    >
+
+      <div class="account-field">
+
+        <label for="signup-name">
+          Full Name
+        </label>
+
+        <input
+          type="text"
+          id="signup-name"
+          placeholder="Your full name"
+        >
+
+        <small id="signup-name-error"></small>
+
+      </div>
+
+
+      <div class="account-field">
+
+        <label for="signup-email">
+          Email Address
+        </label>
+
+        <input
+          type="email"
+          id="signup-email"
+          placeholder="you@example.com"
+        >
+
+        <small id="signup-email-error"></small>
+
+      </div>
+
+
+      <div class="account-field">
+
+        <label for="signup-password">
+          Create Password
+        </label>
+
+        <div class="password-wrap">
+  <input
+    type="password"
+    id="signup-password"
+    placeholder="Create a password"
+  >
+
+  <button
+  type="button"
+  class="password-toggle"
+  data-target="signup-password"
+  aria-label="Show password"
+>
+  <svg viewBox="0 0 24 24">
+    <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path>
+    <circle cx="12" cy="12" r="2.5"></circle>
+  </svg>
+</button>
+</div>
+
+        <small id="signup-password-error"></small>
+
+      </div>
+
+
+      <button type="submit" class="account-submit">
+        Create Account <span>→</span>
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+<!-- Story Overlay -->
+<div id="story-overlay">
+
+  <div class="story-panel">
+
+    <button id="story-close" class="story-close" aria-label="Close story">
+      ×
+    </button>
+
+    <div class="story-eyebrow">
+      THE AURUM STORY
+    </div>
+
+    <h2>
+      A Legacy of
+      <em>Intent.</em>
+    </h2>
+
+    <div class="story-line"></div>
+
+    <p>
+      AURUM was born from a belief that true luxury is never
+      about excess. It is about intention, craftsmanship and
+      the quiet details that make something unforgettable.
+    </p>
+
+    <p>
+      Every piece in our collection is chosen with purpose —
+      from the materials we work with to the hands that shape
+      them. We believe the finest objects should feel personal,
+      timeless and made to be treasured.
+    </p>
+
+    <div class="story-signature">
+      <span>—</span> The AURUM Philosophy
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Product Detail Overlay -->
+<div id="product-overlay">
+  <div class="product-detail-panel">
+
+    <button id="product-close" class="product-close">×</button>
+
+    <div class="product-detail-visual">
+      <div class="product-detail-glyph" id="detail-glyph">◇</div>
+    </div>
+
+    <div class="product-detail-info">
+
+      <div class="product-detail-category" id="detail-category">
+        Category
+      </div>
+
+      <h2 id="detail-name">Product Name</h2>
+
+      <div class="product-detail-price" id="detail-price">
+        $0
+      </div>
+
+      <div class="product-detail-rule"></div>
+
+      <p id="detail-description">
+        A refined piece created with intention, designed to become part
+        of your collection.
+      </p>
+
+      <div class="product-detail-actions">
+
+        <button id="detail-add-cart" class="detail-add-cart">
+          Add to Cart <span>→</span>
+        </button>
+
+        <button id="detail-wish" class="detail-wish">
+          ♡
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
